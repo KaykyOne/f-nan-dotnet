@@ -1,0 +1,16 @@
+COMANDOS PARA ADICIONAR VIEW E CONTROLLER
+
+dotnet aspnet-codegenerator controller -name ClientesController -m Cliente -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name ProdutosController -m Produto -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name VendasController -m Venda -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+dotnet aspnet-codegenerator controller -name VendasProdutosController -m VendaProduto -dc AppDbContext --relativeFolderPath Controllers --useDefaultLayout --referenceScriptLibraries
+
+COMANDOS DE INSTALAÇÃO: 
+
+dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+dotnet add package Microsoft.EntityFrameworkCore.Design
+dotnet add package Microsoft.EntityFrameworkCore.Tools
+dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL
+
+dotnet tool install -g dotnet-aspnet-codegenerator
