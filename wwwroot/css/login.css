@@ -1,31 +1,169 @@
-.login{
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    color: white;
+/* ============= LOGIN PAGE ============= */
+:root {
+  --primary-color: #1a1a1a;
+  --secondary-color: #222222;
+  --accent-color: #ffd700;
+  --text-light: #e0e0e0;
+  --text-primary: #ffffff;
+  --danger-color: #ff4444;
+  --success-color: #44ff44;
 }
 
-.form{
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 100%);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  padding: 2rem;
 }
 
-.input{
-    border-radius: 20px;
-    padding: 10px 20px 10px 20px;
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: var(--secondary-color);
+  padding: 3rem;
+  border-radius: 12px;
+  border: 2px solid var(--accent-color);
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 8px 32px rgba(255, 215, 0, 0.1);
 }
 
-.button{
-    border-radius: 20px;
-    padding: 10px 20px 10px 20px;
-    background-color: white;
-    color: black;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
+.form h1 {
+  text-align: center;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.input {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  background-color: var(--primary-color);
+  border: 1px solid var(--accent-color);
+  color: var(--text-primary);
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: var(--text-light);
+}
+
+.input:focus {
+  outline: none;
+  border-color: #ffed4e;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+  background-color: rgba(255, 215, 0, 0.05);
+}
+
+.button {
+  border-radius: 8px;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.button:hover {
+  background-color: #ffed4e;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+}
+
+.button:active {
+  transform: translateY(0);
+}
+
+/* ============= ALERTS ============= */
+.alert {
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.alert-danger {
+  background-color: rgba(255, 68, 68, 0.15);
+  color: #ff8888;
+  border-left: 4px solid var(--danger-color);
+}
+
+.alert-success {
+  background-color: rgba(68, 255, 68, 0.15);
+  color: #88ff88;
+  border-left: 4px solid var(--success-color);
+}
+
+/* ============= VALIDATION ============= */
+.text-danger {
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+}
+
+asp-validation-summary {
+  color: var(--danger-color);
+}
+
+/* ============= LINKS ============= */
+.btn-link {
+  display: inline-block;
+  text-align: center;
+  margin-top: 1.5rem;
+  color: var(--accent-color);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.btn-link:hover {
+  color: #ffed4e;
+  text-decoration: underline;
+}
+
+.mt-3 {
+  margin-top: 1rem;
+}
+
+/* ============= RESPONSIVE ============= */
+@media (max-width: 600px) {
+  .form {
+    padding: 2rem 1.5rem;
+    max-width: 100%;
+  }
+
+  .form h1 {
+    font-size: 2rem;
+  }
+
+  .login {
+    padding: 1rem;
+  }
 }

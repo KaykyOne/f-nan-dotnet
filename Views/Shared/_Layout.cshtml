@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8" />
@@ -12,57 +12,98 @@
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom">
+        <nav class="navbar navbar-expand-lg navbar-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">SisDaora</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">⚡ CrudNpN</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">🏠 Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Produtos" asp-action="Index">📦 Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Clientes" asp-action="Index">👥 Clientes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Vendas" asp-action="Index">💰 Vendas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Index">🔓 Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-    <div class="flex align-items-start">
-        <div class="d-flex">
+
+    <div class="container-fluid main-content">
+        <div class="row">
             <!-- Sidebar -->
-            <div class="bg-light border-end vh-100 p-3" style="width: 220px;">
-                <ul class="nav flex-column">
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">🏠 Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Produtos" asp-action="Index">📦
-                            Produtos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Clientes" asp-action="Index">👥
-                            Clientes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Vendas" asp-action="Index">💰
-                            Vendas</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">🔒
-                            Privacy</a>
-                    </li>
-                </ul>
-            </div>
+            <aside class="col-md-3 col-lg-2 d-md-block sidebar">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">
+                                <span class="icon">🏠</span> Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Produtos" asp-action="Index">
+                                <span class="icon">📦</span> Produtos
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Clientes" asp-action="Index">
+                                <span class="icon">👥</span> Clientes
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Vendas" asp-action="Index">
+                                <span class="icon">💰</span> Vendas
+                            </a>
+                        </li>
+                    </ul>
+                    <hr>
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Index">
+                                <span class="icon">🔓</span> Login
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Privacy">
+                                <span class="icon">🔒</span> Privacidade
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
 
-            <!-- Conteúdo principal -->
-            <div class="flex-grow-1 p-4">
-                <main role="main" class="pb-3">
+            <!-- Main Content -->
+            <main role="main" class="col-md-9 col-lg-10 px-md-4">
+                <div class="d-flex justify-content-between align-items-center">
+                    <h1 class="h2">@ViewData["Title"]</h1>
+                </div>
+                <div class="content-area">
                     @RenderBody()
-                </main>
-            </div>
+                </div>
+            </main>
         </div>
-
     </div>
 
-    <footer class="border-top footer text-muted">
+    <footer>
         <div class="container">
-            &copy; 2025 - CrudNpN - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            <p>&copy; 2025 - <strong>CrudNpN</strong> - Sistema de Gestão de Vendas</p>
+            <p><a asp-area="" asp-controller="Home" asp-action="Privacy">Política de Privacidade</a></p>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
